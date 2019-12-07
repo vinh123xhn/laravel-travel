@@ -23,6 +23,7 @@ class CreateArtsTable extends Migration
             $table->string('level_2', 255)->nullable()->comment('Loại hình chi tiết cấp 2');
             $table->integer('status')->nullable()->comment('Hiện trạng');
             $table->text('subtitle')->nullable()->comment('Thuyết minh');
+            $table->text('content')->nullable()->comment('Nội dung và các dị bản');
             $table->string('management_unit', 255)->nullable()->comment('Đơn vị quản lý');
             $table->string('celebrity', 255)->nullable()->comment('Danh nhân liên quan');
             $table->string('location', 255)->nullable()->comment('Địa điểm liên quan');

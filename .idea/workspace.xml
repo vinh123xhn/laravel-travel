@@ -3,35 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8e159ff1-c294-4772-8a08-73cca3f774a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArtController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArtController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CostumeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CostumeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CraftsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CraftsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CuisineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CuisineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FestivalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FestivalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RelicsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RelicsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_065409_mail_templates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_18_065409_mail_templates_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/myStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/art/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/art/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Art.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Art.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_083729_create_cuisines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_083729_create_cuisines_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_083746_create_arts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_083746_create_arts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/art/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/costume/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/costume/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/costume/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/crafts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/crafts/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/crafts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/festival/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/festival/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/festival/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/festival/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/festival/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/festival/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/element/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/element/left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/relics/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/relics/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/relics/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +193,8 @@
       <workItem from="1575517489697" duration="30857000" />
       <workItem from="1575617615506" duration="13496000" />
       <workItem from="1575684342574" duration="329000" />
-      <workItem from="1575684673656" duration="15473000" />
+      <workItem from="1575684673656" duration="15636000" />
+      <workItem from="1575713764561" duration="932000" />
     </task>
     <servers />
   </component>
@@ -238,10 +214,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575706391568" />
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575684670500">
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575711035927">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575684670500" />
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575711035927" />
     <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575684343127">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

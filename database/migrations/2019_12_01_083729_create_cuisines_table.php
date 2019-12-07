@@ -20,6 +20,7 @@ class CreateCuisinesTable extends Migration
             $table->string('image', 255)->nullable()->comment('Ảnh đại diện');
             $table->integer('category')->nullable()->comment('Loại');
             $table->integer('taste')->nullable()->comment('Vị chính');
+            $table->text('material')->nullable()->comment('Nguyên liệu');
             $table->integer('type')->nullable()->comment('Kiểu');
             $table->integer('kind_of_dish')->nullable()->comment('Loại món');
             $table->integer('health')->nullable()->comment('Sức khỏe');
@@ -29,7 +30,6 @@ class CreateCuisinesTable extends Migration
             $table->integer('use')->nullable()->comment('Sử dụng');
             $table->text('subtitle')->nullable()->comment('Thuyết minh');
             $table->text('cook')->nullable()->comment('Cách chế biến');
-            $table->text('material')->nullable()->comment('Nguyên liệu');
             $table->string('space', 255)->nullable()->comment('Không gian');
             $table->string('music', 255)->nullable()->comment('Ca múa nhạc');
             $table->string('costume', 255)->nullable()->comment('Trang phục');
