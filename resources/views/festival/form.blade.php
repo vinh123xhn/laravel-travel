@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Thêm mới lễ hội</strong>
-                    </div>ội
+                    </div>
                     <div class="card-body">
                         <!-- Credit Card -->
                         <div id="pay-invoice">
@@ -22,12 +22,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã lễ hội</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã lễ hội" value="{{old('code')}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên lễ hội</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên lễ hội" value="{{old('name')}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -78,6 +84,9 @@
                                                         <option value="{{$k}}">{{$item}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>

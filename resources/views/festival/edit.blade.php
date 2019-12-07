@@ -22,12 +22,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã lễ hội</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã lễ hội" value="{{old('code') ? old('code') : $festival->code}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên lễ hội</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên lễ hội" value="{{old('name') ? old('name') : $festival->name}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -94,6 +100,9 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>

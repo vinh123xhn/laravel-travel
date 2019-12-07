@@ -22,12 +22,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã di tích</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã di tích" value="{{old('code') ? old('code') : $relic->code}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên di tích</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên di tích" value="{{old('name') ? old('name') : $relic->name}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -43,6 +49,9 @@
                                                 @else
                                                     <img id="avatar" src="#" alt="avatar"/>
                                                 @endif
+                                                @error('image')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                                 @error('image')
                                                 <p class="danger">{{ $message }}</p>
                                                 @enderror
@@ -80,6 +89,9 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">

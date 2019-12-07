@@ -22,12 +22,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã ẩm thực" value="{{old('code') ? old('code') : $cuisine->code}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên ẩm thực" value="{{old('name') ? old('name') : $cuisine->name}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -61,6 +67,9 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>

@@ -25,12 +25,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã di tích</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã di tích" value="{{old('code')}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên di tích</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên di tích" value="{{old('name')}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -70,6 +76,9 @@
                                                         <option value="{{$k}}">{{$item}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">

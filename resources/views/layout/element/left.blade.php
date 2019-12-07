@@ -14,6 +14,7 @@
                 <li class="active">
                     <a href="{{route('admin.dashboard')}}"> <i class="menu-icon fa fa-dashboard"></i>Trang chủ </a>
                 </li>
+                @if(Session::get('user')['group'] == 1 || Session::get('user')['group'] == 2)
                 <h3 class="menu-title">Văn hóa</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Di tích</a>
@@ -51,16 +52,16 @@
                         <li><i class="fa fa-list"></i><a href="{{route('admin.cuisine.list')}}">Danh sách</a></li>
                     </ul>
                 </li>
-
+                @endif
                 <h3 class="menu-title">Người dùng</h3><!-- /.menu-title -->
-
+                @if(Session::get('user')['group'] == 1)
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Người dùng</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="{{route('admin.user.list')}}">Danh sách</a></li>
                     </ul>
                 </li>
-
+                @endif
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Bản đồ</a>
                     <ul class="sub-menu children dropdown-menu">

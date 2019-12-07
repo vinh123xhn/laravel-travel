@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cuisine;
-use App\Models\CuisineCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -16,17 +15,13 @@ class CuisineController extends Controller
     }
 
     public function filter(Request $request) {
-        $districts = District::pluck('name', 'id');
-        $schools = School::where('type_school', '=', 7)->with('commune','district','primary');
-        $filter = [];
-        if ($request->district_id) {
-            $filter['district_id'] = $request->district_id;
+        $category = $request->category;
+        if ($category) {
+            $cuisines = Cuisine::where('category','=', $category)->get();
+        } else {
+            $cuisines = Cuisine::get();
         }
-        if ($request->commune_id) {
-            $filter['commune_id'] = $request->commune_id;
-        }
-        $schools = $schools->where($filter)->get();
-        return view('cuisine.list')->with(compact('schools', 'districts'));
+        return view('cuisine.list')->with(compact('cuisines', 'category'));
     }
 
     public function getForm() {
@@ -38,12 +33,14 @@ class CuisineController extends Controller
             'name' => 'required',
             'code' => 'required',
             'image' => 'image',
+            'category' => 'required'
         ];
 
         $messages = [
             'name.required' => 'tên di tích không được để trống',
             'code.required' => 'mã di tích không được để trống',
             'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
+            'category.required' => 'Phân loại không được để trống',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
@@ -82,12 +79,14 @@ class CuisineController extends Controller
             'name' => 'required',
             'code' => 'required',
             'image' => 'image',
+            'category' => 'required'
         ];
 
         $messages = [
             'name.required' => 'tên di tích không được để trống',
             'code.required' => 'mã di tích không được để trống',
             'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
+            'category.required' => 'Phân loại không được để trống',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {

@@ -51,14 +51,10 @@
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="{{asset('images/admin.jpg')}}" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" style="width: 50px; height: 50px" src="{{asset('storage/'.Session::get('user')['avatar'])}}" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Thông tin chi tiết</a>
-
-                        <a class="nav-link" href="#"><i class="fa fa-cog"></i> Cài đặt</a>
-
                         <a class="nav-link" href="{{route('auth.postLogout')}}"><i class="fa fa-power-off"></i> Đăng xuất</a>
                     </div>
                 </div>

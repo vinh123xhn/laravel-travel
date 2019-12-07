@@ -25,10 +25,10 @@ class MailTemplatesTable extends Migration
         \App\Models\MailTemplate::create
         ([
             'name' => 'User forgot password',
-            'subject' => '[HueCIT] Khôi phục mật khẩu',
+            'subject' => '[HueTravel] Khôi phục mật khẩu',
             'content' => '"Chào bạn  {{$name}}
 
-Bạn hoặc ai đó đã sử dụng chức năng khôi phục mật khẩu tại trang web huecit.vn
+Bạn hoặc ai đó đã sử dụng chức năng khôi phục mật khẩu tại trang web csdlhuetravel.com.vn
 
 Nếu bạn thực sự muốn đổi mật khẩu tài khoản của mình, nhấp vào liên kết dưới đây:
 

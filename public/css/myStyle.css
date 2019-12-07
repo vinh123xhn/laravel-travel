@@ -7,3 +7,11 @@
 .text-center {
     text-align: center;
 }
+.for-list {
+    border-radius: 0.2rem;
+    height: 31px;
+    line-height: 20px;
+}
+.danger {
+    color: red;
+}

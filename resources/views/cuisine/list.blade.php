@@ -12,21 +12,39 @@
                         <strong class="card-title">Data Table</strong>
                     </div>
                     <div class="card-body">
-                        <div class="col-sm-12 col-md-6 float-right">
-                            <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
-                                <label>Phân loại:
-                                    <select class="form-control form-control-sm" aria-controls="bootstrap-data-table-export" style="min-width: 140px">
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
+                        <div class="col-sm-12 col-md-12" style="padding-left: 0">
+                            <div class="col-md-4" style="padding-left: 0">
+                                <form action="{{route('admin.cuisine.filter')}}" method="get">
+                                    <label>
+                                        <select class="form-control form-control-sm" name="category" aria-controls="bootstrap-data-table-export">
+                                            @if(isset($category))
+                                                @foreach(config('base.cuisine_category') as $k => $item)
+                                                    <option
+                                                        @if($category == $k)
+                                                        {{"selected"}}
+                                                        @endif
+                                                        value="{{$k}}">{{$item}}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                <option value="">Lựa chọn</option>
+                                                @foreach(config('base.cuisine_category') as $k => $item)
+                                                    <option value="{{$k}}">{{$item}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <button class="btn btn-primary for-list" type="submit">Lọc</button>
+                                    </label>
+                                </form>
+                            </div>
+                            <div class="float-right">
+                                <label>
+                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.festival.form.get')}}"> Thêm mới lễ hội</a>
                                 </label>
                                 <label>
-                                    <a class="btn btn-primary" style="border-radius: 0.2rem; height: 31px; line-height: 20px; margin-bottom:1px; margin-left: 10px; width: 170px; font-size: 14px" href="{{route('admin.cuisine.form.get')}}"> Thêm mới ẩm thực</a>
-                                </label>
-                                <label>
-                                    <a class="btn btn-warning" style="border-radius: 0.2rem; height: 31px; line-height: 20px; margin-bottom:1px; margin-left: 10px" href="{{route('admin.cuisine.export')}}"> Xuất dữ liệu</a>
+                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.festival.export')}}"> Xuất dữ liệu</a>
                                 </label>
                             </div>
                         </div>

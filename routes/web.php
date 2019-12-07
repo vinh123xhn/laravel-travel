@@ -105,6 +105,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'art'], function () {
         Route::get('/', 'ArtController@index')->name('admin.art.list');
+        Route::get('/filter', 'ArtController@filter')->name('admin.art.filter');
         Route::get('/form', 'ArtController@getForm')->name('admin.art.form.get');
         Route::post('/form', 'ArtController@saveForm')->name('admin.art.form.post');
         Route::get('/edit/{id}', 'ArtController@editForm')->name('admin.art.form.edit');
@@ -116,6 +117,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'costume'], function () {
         Route::get('/', 'CostumeController@index')->name('admin.costume.list');
+        Route::get('/filter', 'CostumeController@filter')->name('admin.costume.filter');
         Route::get('/form', 'CostumeController@getForm')->name('admin.costume.form.get');
         Route::post('/form', 'CostumeController@saveForm')->name('admin.costume.form.post');
         Route::get('/edit/{id}', 'CostumeController@editForm')->name('admin.costume.form.edit');
@@ -127,6 +129,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'crafts'], function () {
         Route::get('/', 'CraftsController@index')->name('admin.crafts.list');
+        Route::get('/filter', 'CraftsController@filter')->name('admin.crafts.filter');
         Route::get('/form', 'CraftsController@getForm')->name('admin.crafts.form.get');
         Route::post('/form', 'CraftsController@saveForm')->name('admin.crafts.form.post');
         Route::get('/edit/{id}', 'CraftsController@editForm')->name('admin.crafts.form.edit');
@@ -138,6 +141,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'cuisine'], function () {
         Route::get('/', 'CuisineController@index')->name('admin.cuisine.list');
+        Route::get('/filter', 'CuisineController@filter')->name('admin.cuisine.filter');
         Route::get('/form', 'CuisineController@getForm')->name('admin.cuisine.form.get');
         Route::post('/form', 'CuisineController@saveForm')->name('admin.cuisine.form.post');
         Route::get('/edit/{id}', 'CuisineController@editForm')->name('admin.cuisine.form.edit');
@@ -149,6 +153,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'festival'], function () {
         Route::get('/', 'FestivalController@index')->name('admin.festival.list');
+        Route::get('/filter', 'FestivalController@filter')->name('admin.festival.filter');
         Route::get('/form', 'FestivalController@getForm')->name('admin.festival.form.get');
         Route::post('/form', 'FestivalController@saveForm')->name('admin.festival.form.post');
         Route::get('/edit/{id}', 'FestivalController@editForm')->name('admin.festival.form.edit');
@@ -160,6 +165,7 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
     Route::group(['prefix' => 'relics'], function () {
         Route::get('/', 'RelicsController@index')->name('admin.relics.list');
+        Route::get('/filter', 'RelicsController@filter')->name('admin.relics.filter');
         Route::get('/form', 'RelicsController@getForm')->name('admin.relics.form.get');
         Route::post('/form', 'RelicsController@saveForm')->name('admin.relics.form.post');
         Route::get('/edit/{id}', 'RelicsController@editForm')->name('admin.relics.form.edit');

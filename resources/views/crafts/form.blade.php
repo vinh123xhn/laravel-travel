@@ -22,12 +22,18 @@
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã nghề thủ công</label>
                                                 <input name="code" type="text" class="form-control" placeholder="Nhập mã nghề thủ công" value="{{old('code')}}">
+                                                @error('code')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên nghề thủ công</label>
                                                 <input name="name" type="text" class="form-control" placeholder="Nhập tên nghề thủ công" value="{{old('name')}}">
+                                                @error('name')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -53,6 +59,9 @@
                                                         <option value="{{$k}}">{{$item}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                <p class="danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
