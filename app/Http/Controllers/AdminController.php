@@ -20,5 +20,6 @@ class AdminController extends Controller
         $cuisines = Cuisine::all()->random(3);
         $crafts = Crafts::all()->random(3);
         return view('index', compact('arts', 'cuisines', 'crafts', 'costumes', 'festivals'));
+//
     }
 }

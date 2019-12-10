@@ -15,3 +15,37 @@
 .danger {
     color: red;
 }
+.slider {
+    background-color: #04acbb;
+}
+.title_slide {
+    font-weight: bold;
+    color: white;
+}
+.margin-top-5 {
+    margin-top: 5px;
+}
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-right-5 {
+    margin-right: 5px;
+}
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+.margin-left-10 {
+    margin-left: 10px;
+}

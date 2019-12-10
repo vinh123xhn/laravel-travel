@@ -4,7 +4,17 @@
     <list default="true" id="8e159ff1-c294-4772-8a08-73cca3f774a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/myStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/art/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/costume/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/costume/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/crafts/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/crafts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/festival/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/festival/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/relics/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +205,8 @@
       <workItem from="1575713764561" duration="999000" />
       <workItem from="1575715126018" duration="12000" />
       <workItem from="1575855775336" duration="622000" />
-      <workItem from="1575864532697" duration="2869000" />
+      <workItem from="1575864532697" duration="6491000" />
+      <workItem from="1575941201863" duration="6142000" />
     </task>
     <servers />
   </component>
@@ -219,10 +230,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575864249427" />
-    <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575855792620">
+    <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575941202969">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="616" y="380" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575855792620" />
+    <state x="616" y="380" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575941202969" />
     <state x="605" y="288" width="709" height="528" key="find.popup" timestamp="1575468666069">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

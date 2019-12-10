@@ -92,7 +92,7 @@
                             </tr>
                         </table>
                         <div class="col-md-2">
-                            <a href="{{route('admin.relics.list')}}" class="btn btn-primary">Quay lại</a>
+                            <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
                         </div>
                     </div>
                 </div>
