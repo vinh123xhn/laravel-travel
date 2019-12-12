@@ -23,7 +23,11 @@
                             </tr>
                             <tr>
                                 <th>Ảnh đại diện</th>
-                                <td><img src="{{asset('storage/'. $relics->image)}}" style="width: 400px; height: 300px"></td>
+                                <td>
+                                    <a href="{{asset('storage/'.$relics->image)}}" class="fancy">
+                                        <img src="{{asset('storage/'.$relics->image)}}" style="width: 400px; height: 300px">
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Tình trạng</th>

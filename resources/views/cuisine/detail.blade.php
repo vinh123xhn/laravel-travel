@@ -33,7 +33,9 @@
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
-                                    <img src="{{asset('storage/'.$cuisine->image)}}" style="width: 400px; height: 300px">
+                                    <a href="{{asset('storage/'.$cuisine->image)}}" class="fancy">
+                                        <img src="{{asset('storage/'.$cuisine->image)}}" style="width: 400px; height: 300px">
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
