@@ -42,7 +42,9 @@
                                 <th>Ảnh đại diện</th>
                                 <td>
                                     @if(!empty($crafts->image))
-                                    <img src="{{asset('storage/'.$crafts->image)}}" style="width: 400px; height: 300px">
+                                    <a href="{{asset('storage/'.$crafts->image)}}" class="fancy">
+                                        <img src="{{asset('storage/'.$crafts->image)}}" style="width: 400px; height: 300px">
+                                    </a>
                                     @endif
                                 </td>
                             </tr>
@@ -79,7 +81,7 @@
                             </tr>
                         </table>
                         <div class="col-md-2">
-                            <a href="{{route('admin.crafts.list')}}" class="btn btn-primary">Quay lại</a>
+                            <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
                         </div>
                     </div>
                 </div>

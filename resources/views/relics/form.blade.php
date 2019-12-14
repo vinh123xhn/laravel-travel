@@ -172,12 +172,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1" style="padding-right:0">
-                                            <button id="payment-button" type="submit" class="btn btn-info">
+                                        <div class="col-md-10">
+                                            <button id="payment-button" type="submit" class="btn btn-info" style="width: 100px; margin-right: 10px">
                                                 Lưu
                                             </button>
-                                        </div>
-                                        <div class="col-md-2" style="padding-left:0">
                                             <a href="{{route('admin.relics.list')}}" class="btn btn-primary">Quay lại</a>
                                         </div>
                                     </div>

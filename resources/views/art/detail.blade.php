@@ -41,9 +41,15 @@
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
+<<<<<<< HEAD
                                     @if(!empty($art->image))
                                     <img src="{{asset('storage/'.$art->image)}}" style="width: 400px; height: 300px">
                                     @endif
+=======
+                                    <a href="{{asset('storage/'.$art->image)}}" class="fancy">
+                                        <img src="{{asset('storage/'.$art->image)}}" style="width: 400px; height: 300px">
+                                    </a>
+>>>>>>> a332a171f1bf39179f01f6afc63eb0ec64c2d18e
                                 </td>
                             </tr>
                             <tr>
@@ -83,7 +89,7 @@
                             </tr>
                         </table>
                         <div class="col-md-2">
-                            <a href="{{route('admin.art.list')}}" class="btn btn-primary">Quay lại</a>
+                            <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
                         </div>
                     </div>
                 </div>

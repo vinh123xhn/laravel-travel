@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8e159ff1-c294-4772-8a08-73cca3f774a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Art.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Art.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_083729_create_cuisines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_083729_create_cuisines_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_083746_create_arts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_083746_create_arts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/art/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/art/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/art/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/costume/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/costume/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/crafts/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/crafts/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cuisine/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cuisine/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/festival/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/festival/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/relics/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/relics/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/relics/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/relics/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +198,14 @@
       <workItem from="1575617615506" duration="13496000" />
       <workItem from="1575684342574" duration="329000" />
       <workItem from="1575684673656" duration="15636000" />
-      <workItem from="1575713764561" duration="932000" />
+      <workItem from="1575713764561" duration="999000" />
+      <workItem from="1575715126018" duration="12000" />
+      <workItem from="1575855775336" duration="622000" />
+      <workItem from="1575864532697" duration="6491000" />
+      <workItem from="1575941201863" duration="6264000" />
+      <workItem from="1576055450761" duration="852000" />
+      <workItem from="1576119500488" duration="199000" />
+      <workItem from="1576119792366" duration="121000" />
     </task>
     <servers />
   </component>
@@ -214,22 +225,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="310" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575706391568" />
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575711035927">
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576119699571">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575711035927" />
-    <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575684343127">
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1576119699571" />
+    <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575941202969">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="616" y="380" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575684343127" />
+    <state x="616" y="380" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575941202969" />
     <state x="605" y="288" width="709" height="528" key="find.popup" timestamp="1575468666069">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="605" y="288" width="709" height="528" key="find.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575468666069" />
-    <state x="624" y="253" key="run.anything.popup" timestamp="1575703880463">
+    <state x="624" y="253" key="run.anything.popup" timestamp="1575875087722">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="624" y="253" key="run.anything.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575703880463" />
+    <state x="624" y="253" key="run.anything.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1575875087722" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
