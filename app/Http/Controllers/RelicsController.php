@@ -136,10 +136,11 @@ class RelicsController extends Controller
 
     public function detail($id) {
         $relics = Relics::FindOrFail($id);
-        if (isset($relics->document)) {
+        if (!empty($relics->document)) {
             $document = json_decode($relics->document);
+            return view('relics.detail', compact('relics', 'document'));
         }
-        return view('relics.detail', compact('relics', 'document'));
+        return view('relics.detail', compact('relics'));
     }
 
     public function exportData() {

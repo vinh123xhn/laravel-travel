@@ -135,10 +135,11 @@ class ArtController extends Controller
 
     public function detail($id) {
         $art = Art::FindOrFail($id);
-        if (isset($art->document)) {
+        if (!empty($art->document)) {
             $document = json_decode($art->document);
+            return view('art.detail', compact('art', 'document'));
         }
-        return view('art.detail', compact('art', 'document'));
+        return view('art.detail', compact('art'));
     }
 
     public function exportData() {

@@ -41,10 +41,10 @@
                             </div>
                             <div class="float-right">
                                 <label>
-                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.festival.form.get')}}"> Thêm mới lễ hội</a>
+                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.cuisine.form.get')}}"> Thêm mới ẩm thực</a>
                                 </label>
                                 <label>
-                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.festival.export')}}"> Xuất dữ liệu</a>
+                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.cuisine.export')}}"> Xuất dữ liệu</a>
                                 </label>
                             </div>
                         </div>

@@ -9,6 +9,6 @@ class Costume extends Model
     protected $table = 'costumes';
 
     protected $fillable = [
-        'id', 'code', 'name', 'image','subtitle','age', 'material', 'category', 'nation', 'religion','status','purpose', 'management_unit', 'celebrity', 'location', 'event'
+        'id', 'code', 'name', 'image','subtitle','age', 'material', 'category', 'nation', 'religion','status','purpose', 'management_unit', 'celebrity', 'location', 'event','document'
     ];
 }

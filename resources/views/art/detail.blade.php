@@ -41,7 +41,9 @@
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
+                                    @if(!empty($art->image))
                                     <img src="{{asset('storage/'.$art->image)}}" style="width: 400px; height: 300px">
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -73,7 +75,7 @@
                                 <td>
                                     @if(isset($document))
                                         @foreach($document as $item)
-                                            <a href="{{asset('storage/'.$item)}}"><i class="fa fa-download"></i> Tải xuống</a>
+                                            <a href="{{asset('storage/'.$item)}}" download="download"><i class="fa fa-download"></i> Tải xuống</a>
                                             <br>
                                         @endforeach
                                     @endif

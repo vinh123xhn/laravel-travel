@@ -23,7 +23,11 @@
                             </tr>
                             <tr>
                                 <th>Ảnh đại diện</th>
-                                <td><img src="{{asset('storage/'. $relics->image)}}" style="width: 400px; height: 300px"></td>
+                                <td>
+                                    @if(!empty($relics->image))
+                                    <img src="{{asset('storage/'. $relics->image)}}" style="width: 400px; height: 300px">
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th>Tình trạng</th>
@@ -84,7 +88,7 @@
                                 <td>
                                     @if(isset($document))
                                         @foreach($document as $item)
-                                            <a href="{{asset('storage/'.$item)}}"><i class="fa fa-download"></i> Tải xuống</a>
+                                            <a href="{{asset('storage/'.$item)}}" download="download"><i class="fa fa-download"></i> Tải xuống</a>
                                             <br>
                                         @endforeach
                                     @endif
