@@ -1,6 +1,11 @@
 @extends('layout.master')
 @section('where', 'Trang chủ')
 @section('where_active', 'Trang chủ')
+@section('head')
+    <script src="{{asset('highchart/code/highcharts.js')}}"></script>
+    <script src="{{asset('highchart/code/modules/exporting.js')}}"></script>
+    <script src="{{asset('highchart/code/modules/export-data.js')}}"></script>
+@endsection
 @section('content')
     <div class="animated fadeIn">
         <div class="row">
@@ -413,10 +418,6 @@
     </div><!-- .animated -->
 @endsection
 @section('js')
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
     <script src="{{asset('js/art.js')}}"></script>
     <script src="{{asset('js/costume.js')}}"></script>
     <script src="{{asset('js/crafts.js')}}"></script>
