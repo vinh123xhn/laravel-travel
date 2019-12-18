@@ -10,20 +10,20 @@
     <div class="animated fadeIn">
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="art" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="art" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
                         <ol class="carousel-indicators">
                             @foreach($arts as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -31,58 +31,62 @@
                             @foreach($arts as $k => $item)
                                 @if($k == 0)
                                     <div class="carousel-item active">
-                                        <div class="col-md-12 margin-top-10">
-                                            <a href="{{route('admin.art.detail', $item->id)}}">
-                                                <h4 class="title_slide">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.art.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.art.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <div class="col-md-12">
-                                            <a href="{{route('admin.art.detail', $item->id)}}">
-                                                <h4 class="title_slide margin-top-10">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.art.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.art.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -90,20 +94,20 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="costume" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="costume" style="width: 1000px; height: 400px; margin: 0 auto"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
                         <ol class="carousel-indicators">
                             @foreach($costumes as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -111,58 +115,62 @@
                             @foreach($costumes as $k => $item)
                                 @if($k == 0)
                                     <div class="carousel-item active">
-                                        <div class="col-md-12 margin-top-10">
-                                            <a href="{{route('admin.costume.detail', $item->id)}}">
-                                                <h4 class="title_slide">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.costume.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.costume.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <div class="col-md-12">
-                                            <a href="{{route('admin.costume.detail', $item->id)}}">
-                                                <h4 class="title_slide margin-top-10">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.costume.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.costume.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -170,20 +178,20 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="cuisine" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="cuisine" style="width: 1000px; height: 400px; margin: 0 auto"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
                         <ol class="carousel-indicators">
                             @foreach($cuisines as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -191,58 +199,62 @@
                             @foreach($cuisines as $k => $item)
                                 @if($k == 0)
                                     <div class="carousel-item active">
-                                        <div class="col-md-12 margin-top-10">
-                                            <a href="{{route('admin.cuisine.detail', $item->id)}}">
-                                                <h4 class="title_slide">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.cuisine.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.cuisine.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <div class="col-md-12">
-                                            <a href="{{route('admin.cuisine.detail', $item->id)}}">
-                                                <h4 class="title_slide margin-top-10">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.cuisine.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.cuisine.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -250,20 +262,20 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="crafts" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="crafts" style="width: 1000px; height: 400px; margin: 0 auto"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
                         <ol class="carousel-indicators">
                             @foreach($crafts as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators4" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators4" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -271,58 +283,62 @@
                             @foreach($crafts as $k => $item)
                                 @if($k == 0)
                                     <div class="carousel-item active">
-                                        <div class="col-md-12 margin-top-10">
-                                            <a href="{{route('admin.crafts.detail', $item->id)}}">
-                                                <h4 class="title_slide">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.crafts.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.crafts.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <div class="col-md-12">
-                                            <a href="{{route('admin.crafts.detail', $item->id)}}">
-                                                <h4 class="title_slide margin-top-10">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.crafts.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.crafts.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -330,20 +346,20 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="festival" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="festival" style="width: 1000px; height: 400px; margin: 0 auto"></div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
                         <ol class="carousel-indicators">
                             @foreach($festivals as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators5" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators5" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -351,58 +367,62 @@
                             @foreach($festivals as $k => $item)
                                 @if($k == 0)
                                     <div class="carousel-item active">
-                                        <div class="col-md-12 margin-top-10">
-                                            <a href="{{route('admin.festival.detail', $item->id)}}">
-                                                <h4 class="title_slide">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.festival.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.festival.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <div class="col-md-12">
-                                            <a href="{{route('admin.festival.detail', $item->id)}}">
-                                                <h4 class="title_slide margin-top-10">{{$item->name}}</h4>
-                                            </a>
-                                            <p>
-                                                <?php
-                                                $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
-                                                ?>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 margin-top-10">
                                             <a href="{{route('admin.festival.detail', $item->id)}}">
                                                 @if(!empty($item->image))
-                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @else
-                                                    <img src="" class="d-block w-100" style="max-width: 200px; height: 100px" alt="...">
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
                                                 @endif
                                             </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.festival.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -412,6 +432,84 @@
             <div class="col-md-12">
                 <div class="card">
                     <div id="relics" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div id="carouselExampleIndicators6" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #92e6f1">
+                        <ol class="carousel-indicators">
+                            @foreach($relics as $k => $item)
+                                @if($k == 0)
+                                    <li data-target="#carouselExampleIndicators6" data-slide-to="{{$k}}" class="active"></li>
+                                @else
+                                    <li data-target="#carouselExampleIndicators6" data-slide-to="{{$k}}"></li>
+                                @endif
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach($relics as $k => $item)
+                                @if($k == 0)
+                                    <div class="carousel-item active">
+                                        <div class="col-md-6 margin-top-10">
+                                            <a href="{{route('admin.relics.detail', $item->id)}}">
+                                                @if(!empty($item->image))
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
+                                                @else
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.relics.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="carousel-item">
+                                        <div class="col-md-6 margin-top-10">
+                                            <a href="{{route('admin.relics.detail', $item->id)}}">
+                                                @if(!empty($item->image))
+                                                    <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
+                                                @else
+                                                    <img src="" class="d-block w-100" style="width: 400px; height: 300px" alt="...">
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 margin-top-10">
+                                            <div class="row">
+                                                <a href="{{route('admin.relics.detail', $item->id)}}">
+                                                    <h4 class="title_slide">{{$item->name}}</h4>
+                                                </a>
+                                                <p>
+                                                    <?php
+                                                    $str = $item->subtitle;
+                                                    echo html_entity_decode(substr($str, 0, 800)).'...';
+                                                    ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
