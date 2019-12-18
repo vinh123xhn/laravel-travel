@@ -12,13 +12,13 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
                         <ol class="carousel-indicators">
                             @foreach($arts as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -33,7 +33,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -56,7 +56,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -73,11 +73,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -92,13 +92,13 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
                         <ol class="carousel-indicators">
                             @foreach($costumes as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -113,7 +113,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -136,7 +136,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -153,11 +153,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -172,13 +172,13 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
                         <ol class="carousel-indicators">
                             @foreach($cuisines as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators3" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -193,7 +193,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -216,7 +216,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -233,11 +233,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -252,13 +252,13 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
                         <ol class="carousel-indicators">
                             @foreach($crafts as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators4" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators4" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -273,7 +273,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -296,7 +296,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -313,11 +313,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -332,13 +332,13 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
+                    <div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel" style="height: 400px; background-color: #272c33">
                         <ol class="carousel-indicators">
                             @foreach($festivals as $k => $item)
                                 @if($k == 0)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators5" data-slide-to="{{$k}}" class="active"></li>
                                 @else
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$k}}"></li>
+                                    <li data-target="#carouselExampleIndicators5" data-slide-to="{{$k}}"></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -353,7 +353,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -376,7 +376,7 @@
                                             <p>
                                                 <?php
                                                 $str = $item->subtitle;
-                                                echo html_entity_decode(substr($str, 0, 600)).'...';
+                                                echo html_entity_decode(substr($str, 0, 500)).'...';
                                                 ?>
                                             </p>
                                         </div>
@@ -393,11 +393,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
