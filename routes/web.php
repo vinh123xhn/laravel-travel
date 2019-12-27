@@ -174,4 +174,28 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         Route::get('/delete/{id}', 'RelicsController@delete')->name('admin.relics.delete');
         Route::get('/export', 'RelicsController@exportData')->name('admin.relics.export');
     });
+
+    Route::group(['prefix' => 'tourist-acommodation'], function () {
+        Route::get('/', 'TouristAcommodationController@index')->name('admin.tourist_acommodation.list');
+        Route::get('/filter', 'TouristAcommodationController@filter')->name('admin.tourist_acommodation.filter');
+        Route::get('/form', 'TouristAcommodationController@getForm')->name('admin.tourist_acommodation.form.get');
+        Route::post('/form', 'TouristAcommodationController@saveForm')->name('admin.tourist_acommodation.form.post');
+        Route::get('/edit/{id}', 'TouristAcommodationController@editForm')->name('admin.tourist_acommodation.form.edit');
+        Route::post('/update/{id}', 'TouristAcommodationController@updateForm')->name('admin.tourist_acommodation.form.update');
+        Route::get('/detail/{id}', 'TouristAcommodationController@detail')->name('admin.tourist_acommodation.detail');
+        Route::get('/delete/{id}', 'TouristAcommodationController@delete')->name('admin.tourist_acommodation.delete');
+        Route::get('/export', 'TouristAcommodationController@exportData')->name('admin.tourist_acommodation.export');
+
+        Route::group(['prefix' => '{touristAcommodation}/tourist'], function () {
+            Route::get('/', 'TouristController@index')->name('admin.tourist.list');
+            Route::get('/filter', 'TouristController@filter')->name('admin.tourist.filter');
+            Route::get('/form', 'TouristController@getForm')->name('admin.tourist.form.get');
+            Route::post('/form', 'TouristController@saveForm')->name('admin.tourist.form.post');
+            Route::get('/edit/{id}', 'TouristController@editForm')->name('admin.tourist.form.edit');
+            Route::post('/update/{id}', 'TouristController@updateForm')->name('admin.tourist.form.update');
+            Route::get('/detail/{id}', 'TouristController@detail')->name('admin.tourist.detail');
+            Route::get('/delete/{id}', 'TouristController@delete')->name('admin.tourist.delete');
+            Route::get('/export', 'TouristController@exportData')->name('admin.tourist.export');
+        });
+    });
 });

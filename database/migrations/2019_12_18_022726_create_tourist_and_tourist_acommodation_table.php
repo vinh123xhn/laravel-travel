@@ -16,7 +16,10 @@ class CreateTouristAndTouristAcommodationTable extends Migration
         Schema::create('tourist_and_tourist_acommodation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('tourist')->comment('id khách du lịch');
-            $table->integer('tourist_acommodation')->comment('id cơ sở dữ liệu');
+            $table->integer('tourist_acommodation')->comment('id cơ sở lưu trú');
+            $table->string('start_date', 255)->comment('Ngày nhận phòng');
+            $table->string('end_date', 255)->comment('Ngày trả phòng');
+            $table->string('room', 255)->comment('phòng');
             $table->timestamps();
         });
     }

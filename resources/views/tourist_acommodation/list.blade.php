@@ -1,7 +1,7 @@
 @extends('layout.master')
-@section('where', 'Di tích')
-@section('title', 'Di tích')
-@section('where_active', 'Di tích')
+@section('where', 'Cơ sở lưu trú')
+@section('title', 'Cơ sở lưu trú')
+@section('where_active', 'Cơ sở lưu trú')
 @section('content')
     <div class="animated fadeIn">
         <div class="row">
@@ -14,11 +14,11 @@
                     <div class="card-body">
                         <div class="col-sm-12 col-md-12" style="padding-left: 0">
                             <div class="col-md-4" style="padding-left: 0">
-                                <form action="{{route('admin.relics.filter')}}" method="get">
+                                <form action="{{route('admin.tourist_acommodation.filter')}}" method="get">
                                     <label>
                                         <select class="form-control form-control-sm" name="category" aria-controls="bootstrap-data-table-export">
                                             @if(isset($category))
-                                                @foreach(config('base.relics_category') as $k => $item)
+                                                @foreach(config('base.tourist_accommodation_type') as $k => $item)
                                                     <option
                                                         @if($category == $k)
                                                         {{"selected"}}
@@ -28,7 +28,7 @@
                                                 @endforeach
                                             @else
                                                 <option value="">Lựa chọn</option>
-                                                @foreach(config('base.relics_category') as $k => $item)
+                                                @foreach(config('base.tourist_accommodation_type') as $k => $item)
                                                     <option value="{{$k}}">{{$item}}</option>
                                                 @endforeach
                                             @endif
@@ -41,10 +41,10 @@
                             </div>
                             <div class="float-right">
                                 <label>
-                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.relics.form.get')}}"> Thêm mới di tích</a>
+                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.tourist_acommodation.form.get')}}"> Thêm mới cơ sở lưu trú</a>
                                 </label>
                                 <label>
-                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.relics.export')}}"> Xuất dữ liệu</a>
+                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.tourist_acommodation.export')}}"> Xuất dữ liệu</a>
                                 </label>
                             </div>
                         </div>
@@ -53,22 +53,23 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Mã</th>
-                                <th>Tên di tích</th>
+                                <th>Tên cơ sở lưu trú</th>
                                 <th>Phân loại</th>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($relics as $k => $item)
+                                @foreach($touristAcommodations as $k => $item)
                                     <tr>
                                         <td>{{$k + 1}}</td>
                                         <td>{{$item->code}}</td>
                                         <td>{{$item->name}}</td>
-                                        <td>{{$item->category ? config('base.relics_category')[$item->category] : ''}}</td>
+                                        <td>{{$item->type ? config('base.tourist_accommodation_type')[$item->type] : ''}}</td>
                                         <td class="text-center">
-                                            <a href="{{route('admin.relics.detail', $item->id)}}"><i class="fa fa-eye"></i></a>
-                                            <a href="{{route('admin.relics.form.edit', $item->id)}}"><i class="fa fa-edit"></i></a>
-                                            <a href="{{route('admin.relics.delete', $item->id)}}"><i class="fa fa-trash-o"></i></a>
+                                            <a href="{{route('admin.tourist_acommodation.detail', $item->id)}}"><i class="fa fa-eye"></i></a>
+                                            <a href="{{route('admin.tourist.list', $item->id)}}"><i class="fa fa-plus"></i></a>
+                                            <a href="{{route('admin.tourist_acommodation.form.edit', $item->id)}}"><i class="fa fa-edit"></i></a>
+                                            <a href="{{route('admin.tourist_acommodation.delete', $item->id)}}"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

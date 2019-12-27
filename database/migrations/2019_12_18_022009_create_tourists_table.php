@@ -15,12 +15,14 @@ class CreateTouristsTable extends Migration
     {
         Schema::create('tourists', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('code', 255)->comment('mã du khách');
             $table->string('name', 255)->comment('tên du khách');
             $table->integer('gender')->comment('giới tính');
             $table->string('birthday', 255)->comment('ngày sinh');
             $table->string('address', 255)->comment('địa chỉ');
             $table->string('phone', 20)->comment('số điện thoại');
             $table->string('email', 255)->comment('thư điện tử');
+            $table->string('cmt', 255)->comment('CCCD/CMT');
             $table->integer('type')->comment('loại du khách');
             $table->timestamps();
         });

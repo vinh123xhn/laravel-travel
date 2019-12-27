@@ -9,17 +9,17 @@
 @endsection
 @section('user', 'active')
 @section('content_header_name')
-    Tạo mới trung tâm y tế
+    Sửa thông tin người dùng
 @endsection
 @section('content_header_active')
-    Tạo mới trung tâm y tế
+    Sửa thông tin người dùng
 @endsection
 @section('content')
     <div class="col-md-8">
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Tạo mới cơ sở y tế</h3>
+                <h3 class="card-title">Sửa thông tin người dùng</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->

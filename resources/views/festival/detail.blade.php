@@ -78,8 +78,9 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="col-md-2">
+                        <div class="col-md-5">
                             <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
+                            <a href="{{route('admin.festival.form.edit', $festival->id)}}" class="btn btn-primary">Sửa</a>
                         </div>
                     </div>
                 </div>

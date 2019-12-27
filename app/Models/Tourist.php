@@ -9,6 +9,6 @@ class Tourist extends Model
     protected $table = 'tourists';
 
     protected $fillable = [
-        'id', 'name', 'gender', 'birthday', 'address', 'phone', 'email', 'type'
+        'id', 'code', 'name', 'gender', 'birthday', 'address', 'phone', 'email', 'cmt', 'type'
     ];
 }

@@ -15,10 +15,12 @@ class CreateTouristAcommodationTable extends Migration
     {
         Schema::create('tourist_acommodation', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 255)->comment('tên cơ sở giáo dục');
+            $table->string('code', 255)->comment('mã cơ sở lưu trú');
+            $table->string('name', 255)->comment('tên cơ sở lưu trú');
             $table->string('address', 255)->comment('địa chỉ');
             $table->string('phone', 20)->comment('số điện thoại');
             $table->string('email', 255)->comment('thư điện tử');
+            $table->string('image', 255)->nullable()->comment('Ảnh đại diện');
             $table->string('fax', 255)->comment('fax');
             $table->string('website', 255)->comment('website');
             $table->string('room', 255)->comment('số phòng');
