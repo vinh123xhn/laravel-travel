@@ -19,6 +19,7 @@ class CreateTouristAndTouristAcommodationTable extends Migration
             $table->integer('tourist_acommodation')->comment('id cơ sở lưu trú');
             $table->string('start_date', 255)->comment('Ngày nhận phòng');
             $table->string('end_date', 255)->comment('Ngày trả phòng');
+            $table->string('year', 255)->comment('năm');
             $table->string('room', 255)->comment('phòng');
             $table->timestamps();
         });

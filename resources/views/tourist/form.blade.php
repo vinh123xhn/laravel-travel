@@ -18,7 +18,7 @@
                         <!-- Credit Card -->
                         <div id="pay-invoice">
                             <div class="card-body">
-                                <form action="{{route('admin.tourist_acommodation.form.post')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('admin.tourist.form.post', $touristAcommodation)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-6">

@@ -512,6 +512,16 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div id="tourist_acommodation" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div id="tourist" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
+                </div>
+            </div>
         </div>
     </div><!-- .animated -->
 @endsection
@@ -522,6 +532,8 @@
     <script src="{{asset('js/cuisine.js')}}"></script>
     <script src="{{asset('js/festival.js')}}"></script>
     <script src="{{asset('js/relics.js')}}"></script>
+    <script src="{{asset('js/tourist_acommodation.js')}}"></script>
+    <script src="{{asset('js/tourists.js')}}"></script>
     <script src={{asset("vendors/datatables.net/js/jquery.dataTables.min.js")}}></script>
     <script src={{asset("vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}></script>
     <script src={{asset("vendors/datatables.net-buttons/js/dataTables.buttons.min.js")}}></script>

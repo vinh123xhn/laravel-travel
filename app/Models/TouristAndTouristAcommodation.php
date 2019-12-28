@@ -9,10 +9,10 @@ class TouristAndTouristAcommodation extends Model
     protected $table = 'tourist_and_tourist_acommodation';
 
     protected $fillable = [
-        'id', 'tourist', 'tourist_acommodation', 'start_date', 'end_date', 'room'
+        'id', 'tourist', 'tourist_acommodation', 'start_date', 'end_date', 'year', 'room'
     ];
 
-    public function tourist () {
+    public function tourists () {
         return $this->belongsTo('App\Models\Tourist', 'tourist');
     }
 

@@ -12,16 +12,15 @@
                         <strong class="card-title">Thêm mới khách du lịch</strong>
                     </div>
                     <div class="card-body">
-                        <!-- Credit Card -->
                         <div id="pay-invoice">
                             <div class="card-body">
-                                <form action="{{route('admin.tourist_acommodation.form.update', $tourist->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('admin.tourist.form.update', ['id' => $tourist->id, 'touristAcommodation' => $touristAcommodation])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Mã khách du lịch</label>
-                                                <input name="code" type="text" class="form-control" placeholder="Nhập mã khách du lịch" value="{{old('code') ? old('code') : $tourist->code}}">
+                                                <input name="code" type="text" class="form-control" placeholder="Nhập mã khách du lịch" value="{{old('code') ? old('code') : $touristDetail->code}}">
                                                 @error('code')
                                                 <p class="danger">{{ $message }}</p>
                                                 @enderror
@@ -30,7 +29,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Tên khách du lịch</label>
-                                                <input name="name" type="text" class="form-control" placeholder="Nhập tên khách du lịch" value="{{old('name') ? old('name') : $tourist->name}}">
+                                                <input name="name" type="text" class="form-control" placeholder="Nhập tên khách du lịch" value="{{old('name') ? old('name') : $touristDetail->name}}">
                                                 @error('name')
                                                 <p class="danger">{{ $message }}</p>
                                                 @enderror
@@ -46,7 +45,7 @@
                                                     <option value="">Lựa chọn</option>
                                                     @foreach(config('base.tourist_type') as $k => $item)
                                                         <option
-                                                            @if($tourist->type == $k)
+                                                            @if($touristDetail->type == $k)
                                                             {{"selected"}}
                                                             @endif
                                                             value="{{$k}}">{{$item}}
@@ -65,7 +64,7 @@
                                                     <option value="">Lựa chọn</option>
                                                     @foreach(config('base.gender') as $k => $item)
                                                         <option
-                                                            @if($tourist->gender == $k)
+                                                            @if($touristDetail->gender == $k)
                                                             {{"selected"}}
                                                             @endif
                                                             value="{{$k}}">{{$item}}
@@ -83,13 +82,13 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Ngày sinh</label>
-                                                <input name="birthday" type="text" class="form-control" placeholder="Nhập ngày sinh" value="{{old('birthday') ? old('birthday') : $tourist->birthday}}">
+                                                <input name="birthday" type="text" class="form-control" placeholder="Nhập ngày sinh" value="{{old('birthday') ? old('birthday') : $touristDetail->birthday}}">
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Địa chỉ</label>
-                                                <input name="address" type="text" class="form-control" placeholder="Nhập địa chỉ" value="{{old('address') ? old('address') : $tourist->address}}">
+                                                <input name="address" type="text" class="form-control" placeholder="Nhập địa chỉ" value="{{old('address') ? old('address') : $touristDetail->address}}">
                                             </div>
                                         </div>
                                     </div>
@@ -98,13 +97,13 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Số điện thoại</label>
-                                                <input name="phone" type="text" class="form-control" placeholder="Nhập số điện thoại" value="{{old('phone') ? old('phone') : $tourist->phone}}">
+                                                <input name="phone" type="text" class="form-control" placeholder="Nhập số điện thoại" value="{{old('phone') ? old('phone') : $touristDetail->phone}}">
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Thư điện tử</label>
-                                                <input name="email" type="text" class="form-control" placeholder="Nhập thư điện tử" value="{{old('email') ? old('email') : $tourist->email}}">
+                                                <input name="email" type="text" class="form-control" placeholder="Nhập thư điện tử" value="{{old('email') ? old('email') : $touristDetail->email}}">
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +112,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Chứng minh thư/ CCCD</label>
-                                                <input name="cmt" type="text" class="form-control" placeholder="Nhập chứng minh thư/CCCD" value="{{old('cmt') ? old('cmt') : $tourist->cmt}}">
+                                                <input name="cmt" type="text" class="form-control" placeholder="Nhập chứng minh thư/CCCD" value="{{old('cmt') ? old('cmt') : $touristDetail->cmt}}">
                                             </div>
                                         </div>
                                         <div class="col-6">

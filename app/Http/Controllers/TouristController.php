@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tourist;
 use App\Models\TouristAndTouristAcommodation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -10,38 +12,32 @@ use Illuminate\Support\Facades\Validator;
 class TouristController extends Controller
 {
     public function index($touristAcommodation) {
-        $tourists = TouristAndTouristAcommodation::with('tourist')->get();
+        $tourists = TouristAndTouristAcommodation::with('tourists')->get();
         return view('tourist.list')->with(compact('tourists', 'touristAcommodation'));
     }
 
-    public function filter(Request $request) {
-        $category = $request->category;
-        if ($category) {
-            $touristAcommodations = TouristAcommodation::where('category','=', $category)->get();
-        } else {
-            $touristAcommodations = TouristAcommodation::get();
-        }
-        return view('tourist_acommodation.list')->with(compact('touristAcommodations', 'category'));
+    public function getForm($touristAcommodation) {
+        return view('tourist.form', compact('touristAcommodation'));
     }
 
-    public function getForm() {
-        return view('tourist.form');
-    }
-
-    public function saveForm(Request $request) {
+    public function saveForm(Request $request, $touristAcommodation) {
         $rules = [
             'name' => 'required',
             'code' => 'required',
-            'image' => 'image',
             'type' => 'required',
+            'cmt' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
             'email' => 'email'
         ];
 
         $messages = [
-            'name.required' => 'tên di tích không được để trống',
-            'code.required' => 'mã di tích không được để trống',
-            'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
+            'name.required' => 'tên khách du lịch không được để trống',
+            'code.required' => 'mã khách du lịch không được để trống',
             'type.required' => 'Phân loại không được để trống',
+            'cmt.required' => 'CMT/CCCD không được để trống',
+            'start_date.required' => 'Ngày nhận phòng không được để trống',
+            'end_date.required' => 'Ngày trả phòng không được để trống',
             'email.email' => 'Thư điện tử không đúng đính dạng',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -50,23 +46,23 @@ class TouristController extends Controller
             return redirect()->back()->withErrors($validator)->withInput($request->input());
         } else {
             $data = $request->all();
-            unset($data['image']);
-            if($request->hasFile('image'))
-            {
-                $image_path = $request->file('image')->store('images', 'public');
-                $data['image'] = $image_path;
-            }
-            TouristAcommodation::create($data);
-            return redirect()->route('admin.tourist_acommodation.list');
+            $now = new Carbon($request->start_date);
+            $data['year'] = $now->year;
+            $data['tourist_acommodation'] = $touristAcommodation;
+            $tourist = Tourist::create($data);
+            $data['tourist'] = $tourist->id;
+            TouristAndTouristAcommodation::create($data);
+            return redirect()->route('admin.tourist.list', compact('touristAcommodation'));
         }
     }
 
-    public function editForm($id) {
-        $touristAcommodation = TouristAcommodation::FindOrFail($id);
-        return view('tourist_acommodation.edit', compact('touristAcommodation'));
+    public function editForm($touristAcommodation, $id) {
+        $tourist = TouristAndTouristAcommodation::FindOrFail($id);
+        $touristDetail = Tourist::FindOrFail($tourist->tourist);
+        return view('tourist.edit', compact('touristAcommodation', 'tourist', 'touristDetail'));
     }
 
-    public function updateForm(Request $request, $id) {
+    public function updateForm(Request $request, $touristAcommodation, $id) {
         $rules = [
             'name' => 'required',
             'code' => 'required',
@@ -76,8 +72,8 @@ class TouristController extends Controller
         ];
 
         $messages = [
-            'name.required' => 'tên di tích không được để trống',
-            'code.required' => 'mã di tích không được để trống',
+            'name.required' => 'tên khách du lịch không được để trống',
+            'code.required' => 'mã khách du lịch không được để trống',
             'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
             'type.required' => 'Phân loại không được để trống',
             'email.email' => 'Thư điện tử không đúng đính dạng',
@@ -87,71 +83,81 @@ class TouristController extends Controller
             // tra ve true neu validate bi loi
             return redirect()->back()->withErrors($validator)->withInput($request->input());
         } else {
-            $touristAcommodation = TouristAcommodation::FindOrFail($id);
-            if ($request->hasFile('image')) {
-                //xoa anh cu neu co
-                $currentImg = $touristAcommodation->image;
-                if ($currentImg) {
-                    Storage::delete('public/' . $currentImg);
-                }
-                //cap nhap anh moi
-                $image = $request->file('image');
-                $pathImage = $image->store('images', 'public');
-            }
-            $updateRequest = $request->all();
-            unset($updateRequest['_token']);
-            unset($updateRequest['image']);
-            if (isset($pathImage)) {
-                $updateRequest['image'] = $pathImage;
-            }
-            TouristAcommodation::find($id)->update($updateRequest);
-            return redirect()->route('admin.tourist_acommodation.list');
+            $touristData = [];
+            $touristRelation = [];
+            $touristData['code'] = $request->code;
+            $touristData['name'] = $request->name;
+            $touristData['type'] = $request->type;
+            $touristData['gender'] = $request->gender;
+            $touristData['birthday'] = $request->birthday;
+            $touristData['address'] = $request->address;
+            $touristData['phone'] = $request->phone;
+            $touristData['email'] = $request->email;
+            $touristData['cmt'] = $request->cmt;
+
+            $touristRelation['room'] = $request->room;
+            $touristRelation['start_date'] = $request->start_date;
+            $touristRelation['end_date'] = $request->end_date;
+            $now = new Carbon($request->start_date);
+            $touristRelation['year'] = $now->year;
+            $tourist = TouristAndTouristAcommodation::FindOrFail($id);
+            Tourist::FindOrFail($tourist->tourist)->update($touristData);
+            $tourist->update($touristRelation);
+
+            return redirect()->route('admin.tourist.list', compact('touristAcommodation'));
         }
     }
 
-    public function detail($id) {
-        $touristAcommodation = TouristAcommodation::FindOrFail($id);
-        return view('tourist_acommodation.detail', compact('touristAcommodation'));
+    public function detail($touristAcommodation, $id) {
+        $tourist = TouristAndTouristAcommodation::FindOrFail($id);
+        $touristDetail = Tourist::FindOrFail($tourist->tourist);
+        return view('tourist.edit', compact('touristAcommodation', 'tourist', 'touristDetail'));
     }
 
-    public function exportData() {
+    public function exportData($touristAcommodation) {
 //        field => title
         $exportFields = [
             'stt' => 'STT',
-            'code' => 'Mã di tích',
-            'name' => 'Tên di tích',
-            'relics_level' => 'Cấp di tích',
-            'category' => 'Phân loại',
-            'num_of_recognition_decisions' => 'Số quyết định công nhận',
-            'year_of_recognition' => 'Năm công nhận',
-            'status' => 'Tình trạng hiện nay',
-            'age' => 'Niên đại',
-            'detection_process' => 'Quán trình phát hiện',
-            'management_unit' => 'Đơn vị quản lý',
-            'celebrity' => 'Danh nhân liên quan',
-            'location' => 'Địa điểm liên quan',
-            'event' => 'Sự kiên liên quan',
+            'code' => 'Mã khách du lịch',
+            'name' => 'Tên khách du lịch',
+            'gender' => 'Giới tính',
+            'birthday' => 'Ngày sinh',
+            'address' => 'Địa chỉ',
+            'phone' => 'Số điện thoại',
+            'email' => 'Thư điện tử',
+            'cmt' => 'CMT/CCCD',
+            'type' => 'Loại du khách',
+            'room' => 'Ở phòng',
+            'start_date' => 'Ngày nhận phòng',
+            'end_date' => 'Ngày trả phòng',
         ];
-        $touristAcommodations = TouristAcommodation::orderBy('created_at', 'desc')->get();
-        $category = config('base.relics_category');
-        $touristAcommodations_level = config('base.relics_level');
-        $status = config('base.relics_status');
+        $tourists = TouristAndTouristAcommodation::orderBy('created_at', 'desc')->get();
+        $gender = config('base.gender');
+        $type = config('base.tourist_type');
 
         $data = [];
-        foreach ($touristAcommodations as $k => $item) {
+        foreach ($tourists as $k => $item) {
             $item['stt'] = $k + 1;
-            $item['category'] = !empty($item->category) ? $category[$item->category] : '';
-            $item['relics_level'] = !empty($item->relics_level) ? $touristAcommodations_level[$item->relics_level] : '';
-            $item['status'] = !empty($item->status) ? $status[$item->status] : '';
+            $item['code'] = !empty($item->tourists->code) ? $item->tourists->code : '';
+            $item['name'] = !empty($item->tourists->name) ? $item->tourists->name : '';
+            $item['gender'] = !empty($item->tourists->gender) ? $gender[$item->tourists->gender] : '';
+            $item['birthday'] = !empty($item->tourists->birthday) ? $item->tourists->birthday : '';
+            $item['address'] = !empty($item->tourists->address) ? $item->tourists->address : '';
+            $item['phone'] = !empty($item->tourists->phone) ? $item->tourists->phone : '';
+            $item['email'] = !empty($item->tourists->email) ? $item->tourists->email : '';
+            $item['cmt'] = !empty($item->tourists->cmt) ? $item->tourists->cmt : '';
+            $item['type'] = !empty($item->tourists->type) ? $type[$item->tourists->type] : '';
 
             $item = $item->toArray();
             $data[] = $item;
         }
-        $this->downloadExcel('ThongKeDiTich data'.date('Y-m-d'), $exportFields, $data, 'ThongKeDiTich-'.date('Y-m-d').'.xlsx');
+        $this->downloadExcel('ThongKeDuKhach data'.date('Y-m-d'), $exportFields, $data, 'ThongKeDuKhach-'.date('Y-m-d').'.xlsx');
     }
 
     public function delete($id) {
-        TouristAcommodation::FindOrFail($id)->delete();
+        $tourist = TouristAndTouristAcommodation::FindOrFail($id);
+        Tourist::FindOrFail($tourist->tourist)->delete();
+        $tourist->delete();
         return redirect()->back();
     }
 }

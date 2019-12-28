@@ -14,12 +14,12 @@
                     <div class="card-body">
                         <table class="table table-bordered table-th">
                             <tr>
-                                <th>Tên Cơ sở lưu trú</th>
-                                <td>{{$touristAcommodation->name}}</td>
+                                <th>Mã Cơ sở lưu trú</th>
+                                <td>{{$touristAcommodation->code}}</td>
                             </tr>
                             <tr>
-                                <th>Cấp Cơ sở lưu trú</th>
-                                <td>{{$touristAcommodation->relics_level ? config('base.relics_level')[$touristAcommodation->relics_level] : ''}}</td>
+                                <th>Tên Cơ sở lưu trú</th>
+                                <td>{{$touristAcommodation->name}}</td>
                             </tr>
                             <tr>
                                 <th>Ảnh đại diện</th>

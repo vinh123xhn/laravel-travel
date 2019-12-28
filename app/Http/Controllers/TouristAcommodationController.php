@@ -38,8 +38,8 @@ class TouristAcommodationController extends Controller
         ];
 
         $messages = [
-            'name.required' => 'tên di tích không được để trống',
-            'code.required' => 'mã di tích không được để trống',
+            'name.required' => 'tên cơ sở lưu trú không được để trống',
+            'code.required' => 'mã cơ sở lưu trú không được để trống',
             'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
             'type.required' => 'Phân loại không được để trống',
             'email.email' => 'Thư điện tử không đúng đính dạng',
@@ -76,8 +76,8 @@ class TouristAcommodationController extends Controller
         ];
 
         $messages = [
-            'name.required' => 'tên di tích không được để trống',
-            'code.required' => 'mã di tích không được để trống',
+            'name.required' => 'tên cơ sở lưu trú không được để trống',
+            'code.required' => 'mã cơ sở lưu trú không được để trống',
             'image.image' => 'Ảnh đại diện phải thuộc định dạng ảnh',
             'type.required' => 'Phân loại không được để trống',
             'email.email' => 'Thư điện tử không đúng đính dạng',
@@ -118,36 +118,30 @@ class TouristAcommodationController extends Controller
 //        field => title
         $exportFields = [
             'stt' => 'STT',
-            'code' => 'Mã di tích',
-            'name' => 'Tên di tích',
-            'relics_level' => 'Cấp di tích',
-            'category' => 'Phân loại',
-            'num_of_recognition_decisions' => 'Số quyết định công nhận',
-            'year_of_recognition' => 'Năm công nhận',
-            'status' => 'Tình trạng hiện nay',
-            'age' => 'Niên đại',
-            'detection_process' => 'Quán trình phát hiện',
-            'management_unit' => 'Đơn vị quản lý',
-            'celebrity' => 'Danh nhân liên quan',
-            'location' => 'Địa điểm liên quan',
-            'event' => 'Sự kiên liên quan',
+            'code' => 'Mã cơ sở lưu trú',
+            'name' => 'Tên cơ sở lưu trú',
+            'type' => 'Phân loại',
+            'address' => 'Địa chỉ',
+            'phone' => 'Số điện thoại',
+            'email' => 'Thư điện tử',
+            'fax' => 'Fax',
+            'website' => 'Website',
+            'room' => 'Số phòng',
+            'min_price' => 'Giá phòng rẻ nhất',
+            'max_price' => 'Giá phòng đắt nhất',
         ];
         $touristAcommodations = TouristAcommodation::orderBy('created_at', 'desc')->get();
-        $category = config('base.relics_category');
-        $touristAcommodations_level = config('base.relics_level');
-        $status = config('base.relics_status');
+        $category = config('base.tourist_accommodation_type');
 
         $data = [];
         foreach ($touristAcommodations as $k => $item) {
             $item['stt'] = $k + 1;
-            $item['category'] = !empty($item->category) ? $category[$item->category] : '';
-            $item['relics_level'] = !empty($item->relics_level) ? $touristAcommodations_level[$item->relics_level] : '';
-            $item['status'] = !empty($item->status) ? $status[$item->status] : '';
+            $item['type'] = !empty($item->type) ? $category[$item->type] : '';
 
             $item = $item->toArray();
             $data[] = $item;
         }
-        $this->downloadExcel('ThongKeDiTich data'.date('Y-m-d'), $exportFields, $data, 'ThongKeDiTich-'.date('Y-m-d').'.xlsx');
+        $this->downloadExcel('ThongKeCSLT data'.date('Y-m-d'), $exportFields, $data, 'ThongKeCSLT-'.date('Y-m-d').'.xlsx');
     }
 
     public function delete($id) {

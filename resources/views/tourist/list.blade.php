@@ -14,30 +14,30 @@
                     <div class="card-body">
                         <div class="col-sm-12 col-md-12" style="padding-left: 0">
                             <div class="col-md-4" style="padding-left: 0">
-                                <form action="{{route('admin.tourist_acommodation.filter')}}" method="get">
-                                    <label>
-                                        <select class="form-control form-control-sm" name="category" aria-controls="bootstrap-data-table-export">
-                                            @if(isset($category))
-                                                @foreach(config('base.tourist_accommodation_type') as $k => $item)
-                                                    <option
-                                                        @if($category == $k)
-                                                        {{"selected"}}
-                                                        @endif
-                                                        value="{{$k}}">{{$item}}
-                                                    </option>
-                                                @endforeach
-                                            @else
-                                                <option value="">Lựa chọn</option>
-                                                @foreach(config('base.tourist_accommodation_type') as $k => $item)
-                                                    <option value="{{$k}}">{{$item}}</option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-                                    </label>
-                                    <label>
-                                        <button class="btn btn-primary for-list" type="submit">Lọc</button>
-                                    </label>
-                                </form>
+                                {{--<form action="{{route('admin.tourist.filter')}}" method="get">--}}
+                                    {{--<label>--}}
+                                        {{--<select class="form-control form-control-sm" name="category" aria-controls="bootstrap-data-table-export">--}}
+                                            {{--@if(isset($category))--}}
+                                                {{--@foreach(config('base.tourist_type') as $k => $item)--}}
+                                                    {{--<option--}}
+                                                        {{--@if($category == $k)--}}
+                                                        {{--{{"selected"}}--}}
+                                                        {{--@endif--}}
+                                                        {{--value="{{$k}}">{{$item}}--}}
+                                                    {{--</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--@else--}}
+                                                {{--<option value="">Lựa chọn</option>--}}
+                                                {{--@foreach(config('base.tourist_type') as $k => $item)--}}
+                                                    {{--<option value="{{$k}}">{{$item}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--@endif--}}
+                                        {{--</select>--}}
+                                    {{--</label>--}}
+                                    {{--<label>--}}
+                                        {{--<button class="btn btn-primary for-list" type="submit">Lọc</button>--}}
+                                    {{--</label>--}}
+                                {{--</form>--}}
                             </div>
                             <div class="float-right">
                                 <label>
@@ -62,9 +62,9 @@
                                 @foreach($tourists as $k => $item)
                                     <tr>
                                         <td>{{$k + 1}}</td>
-                                        <td>{{$item->code}}</td>
-                                        <td>{{$item->name}}</td>
-                                        <td>{{$item->type ? config('base.tourist_type')[$item->type] : ''}}</td>
+                                        <td>{{$item['tourists']['code']}}</td>
+                                        <td>{{$item['tourists']['name']}}</td>
+                                        <td>{{$item['tourists']['type'] ? config('base.tourist_type')[$item['tourists']['type']] : ''}}</td>
                                         <td class="text-center">
                                             <a href="{{route('admin.tourist.detail', ['id' => $item->id, 'touristAcommodation' => $touristAcommodation])}}"><i class="fa fa-eye"></i></a>
                                             <a href="{{route('admin.tourist.form.edit', ['id' => $item->id, 'touristAcommodation' => $touristAcommodation])}}"><i class="fa fa-edit"></i></a>

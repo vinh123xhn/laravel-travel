@@ -80,6 +80,15 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         return Response::json($data);
     });
 
+    Route::get('/get-tourist-acommodation-for-chart', function () {
+        $data = [];
+        $acommodations = \App\Models\TouristAcommodation::count();
+        for ($i = 1; $i <= count(config('base.tourist_accommodation_type')); $i++) {
+            $data[$i] = (\App\Models\TouristAcommodation::where('type', '=' ,$i)->count() / $acommodations) * 100;
+        }
+        return Response::json($data);
+    });
+
     Route::get('/get-relics-for-chart', function () {
         $objData = [];
         $objData['relics'] = [];
@@ -88,6 +97,25 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         $now = \Carbon\Carbon::now();
         for($i = ($now->year - 10); $i <= $now->year; $i++ ){
             array_push($objData['relics'], \App\Models\Relics::where('year_of_recognition', '=' ,$i)->count());
+            array_push($objData['year'], $i);
+        }
+        return Response::json($objData);
+    });
+
+    Route::get('/get-tourists-for-chart', function () {
+        $objData = [];
+        $objData[1] = [];
+        $objData[2] = [];
+        $objData['year'] = [];
+        $now = \Carbon\Carbon::now();
+        for($i = ($now->year - 10); $i <= $now->year; $i++ ){
+            array_push($objData[1], \App\Models\TouristAndTouristAcommodation::where('year', '=', $i)->whereHas('tourists', function ($query) {
+                $query->where('type', '=', 1);
+            })->count());
+            array_push($objData[2], \App\Models\TouristAndTouristAcommodation::where('year', '=', $i)->whereHas('tourists', function ($query) {
+                $query->where('type', '=', 2);
+            })->count());
+
             array_push($objData['year'], $i);
         }
         return Response::json($objData);
@@ -188,7 +216,6 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
 
         Route::group(['prefix' => '{touristAcommodation}/tourist'], function () {
             Route::get('/', 'TouristController@index')->name('admin.tourist.list');
-            Route::get('/filter', 'TouristController@filter')->name('admin.tourist.filter');
             Route::get('/form', 'TouristController@getForm')->name('admin.tourist.form.get');
             Route::post('/form', 'TouristController@saveForm')->name('admin.tourist.form.post');
             Route::get('/edit/{id}', 'TouristController@editForm')->name('admin.tourist.form.edit');
