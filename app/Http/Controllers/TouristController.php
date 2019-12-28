@@ -131,7 +131,7 @@ class TouristController extends Controller
             'start_date' => 'Ngày nhận phòng',
             'end_date' => 'Ngày trả phòng',
         ];
-        $tourists = TouristAndTouristAcommodation::orderBy('created_at', 'desc')->get();
+        $tourists = TouristAndTouristAcommodation::where('tourist_acommodation', '=', $touristAcommodation)->orderBy('created_at', 'desc')->get();
         $gender = config('base.gender');
         $type = config('base.tourist_type');
 
