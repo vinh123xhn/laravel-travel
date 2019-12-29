@@ -135,11 +135,12 @@ class FestivalController extends Controller
 
     public function detail($id) {
         $festival = Festival::FindOrFail($id);
-        if (!empty($festival->document)) {
+        if (isset($festival->document)) {
             $document = json_decode($festival->document);
-            return view('festival.detail', compact('festival', 'document'));
+        }else {
+            $document = [];
         }
-        return view('festival.detail', compact('festival'));
+        return view('festival.detail', compact('festival', 'document'));
     }
 
     public function exportData() {

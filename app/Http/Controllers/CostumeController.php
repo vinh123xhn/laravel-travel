@@ -136,11 +136,12 @@ class CostumeController extends Controller
 
     public function detail($id) {
         $costume = Costume::FindOrFail($id);
-        if (!empty($costume->document)) {
+        if (isset($costume->document)) {
             $document = json_decode($costume->document);
-            return view('costume.detail', compact('costume', 'document'));
+        }else {
+            $document = [];
         }
-        return view('costume.detail', compact('costume'));
+        return view('costume.detail', compact('costume', 'document'));
     }
 
     public function exportData() {

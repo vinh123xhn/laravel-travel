@@ -52,6 +52,12 @@
                         <li><i class="fa fa-list"></i><a href="{{route('admin.cuisine.list')}}">Danh sách</a></li>
                     </ul>
                 </li>
+                    <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bed"></i>Cơ sở lưu trú</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="{{route('admin.tourist_acommodation.list')}}">Danh sách</a></li>
+                    </ul>
+                </li>
                 @endif
                 <h3 class="menu-title">Người dùng</h3><!-- /.menu-title -->
                 @if(Session::get('user')['group'] == 1)

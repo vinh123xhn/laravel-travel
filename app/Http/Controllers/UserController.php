@@ -128,6 +128,11 @@ class UserController extends Controller
                 $updateRequest['avatar'] = $path;
             }
             $user->update($updateRequest);
+            $data = $request->session()->get('user');
+            if($data['id'] == $id) {
+                $newdata = User::FindOrFail($id);
+                $request->session()->put('user', $newdata);
+            }
             return redirect()->route('admin.user.list');
         }
     }

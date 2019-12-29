@@ -136,11 +136,12 @@ class CraftsController extends Controller
 
     public function detail($id) {
         $crafts = Crafts::FindOrFail($id);
-        if (!empty($crafts->document)) {
+        if (isset($crafts->document)) {
             $document = json_decode($crafts->document);
-            return view('crafts.detail', compact('crafts', 'document'));
+        }else {
+            $document = [];
         }
-        return view('crafts.detail', compact('crafts'));
+        return view('crafts.detail', compact('crafts', 'document'));
     }
 
     public function exportData() {

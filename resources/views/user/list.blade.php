@@ -29,23 +29,7 @@
                     <div class="card-body">
                         <div class="col-sm-12 col-md-6 float-right">
                             <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
-                                <label>Loại hình:
-                                    <select class="form-control form-control-sm" aria-controls="bootstrap-data-table-export" style="min-width: 140px">
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
-                                </label>
-                                <label>Phân loại:
-                                    <select class="form-control form-control-sm" aria-controls="bootstrap-data-table-export" style="min-width: 140px">
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
-                                </label>
-                                <label>
+                                <label class="float-right">
                                     <a class="btn btn-primary" style="border-radius: 0.2rem; height: 31px; line-height: 20px; margin-bottom:1px; margin-left: 10px; font-size: 14px; width: 170px" href="{{route('admin.user.form.get')}}"> Thêm mới người dùng</a>
                                 </label>
                             </div>
@@ -70,7 +54,7 @@
                                     <td>{{$item->email}}</td>
                                     <td>{{$item->group ? config('base.group_user')[$item->group] : ''}}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.user.form.get')}}"><i class="fa fa-eye"></i></a>
+                                        <a href="{{route('admin.user.detail', $item->id)}}"><i class="fa fa-eye"></i></a>
                                         <a href="{{route('admin.user.form.edit', $item->id)}}"><i class="fa fa-edit"></i></a>
                                         <a href="{{route('admin.user.delete', $item->id)}}"><i class="fa fa-trash-o"></i></a>
                                     </td>

@@ -135,11 +135,12 @@ class CuisineController extends Controller
 
     public function detail($id) {
         $cuisine = Cuisine::FindOrFail($id);
-        if (!empty($cuisine->document)) {
+        if (isset($cuisine->document)) {
             $document = json_decode($cuisine->document);
-             return view('cuisine.detail', compact('cuisine', 'document'));
+        } else {
+            $document = [];
         }
-        return view('cuisine.detail', compact('cuisine'));
+        return view('cuisine.detail', compact('cuisine', 'document'));
     }
 
     public function exportData() {

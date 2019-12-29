@@ -342,5 +342,19 @@ return [
         3 => 'Dip đặc biệt (Lễ, giỗ...',
         4 => 'Chưa xác định',
     ],
+
+    'tourist_accommodation_type' => [
+        1 => 'Khách sạn',
+        2 => 'Homestay',
+        3 => 'Biệt thự du lịch',
+        4 => 'Căn hộ du lịch',
+        5 => 'Tầu thủy lưu trú du lịch',
+        6 => 'Nhà nghỉ du lịch',
+        7 => 'Chưa xếp hạng',
+    ],
+    'tourist_type' => [
+            1 => 'Khách du lịch nội địa',
+            2 => 'Khách quốc tế'
+    ],
 ];
 

@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('where', 'Nghệ thuật')
 @section('where_active', 'Nghê thuật')
-@section('title', 'Trang phục')
+@section('title', 'Nghê thuật')
 @section('content')
     <div class="animated fadeIn">
         <div class="row">

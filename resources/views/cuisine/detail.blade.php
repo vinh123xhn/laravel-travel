@@ -33,15 +33,11 @@
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
-<<<<<<< HEAD
                                     @if(!empty($cuisine->image))
-                                    <img src="{{asset('storage/'.$cuisine->image)}}" style="width: 400px; height: 300px">
-                                    @endif
-=======
                                     <a href="{{asset('storage/'.$cuisine->image)}}" class="fancy">
                                         <img src="{{asset('storage/'.$cuisine->image)}}" style="width: 400px; height: 300px">
                                     </a>
->>>>>>> a332a171f1bf39179f01f6afc63eb0ec64c2d18e
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -98,12 +94,12 @@
                                 <th>Sự kiện liên quan</th>
                                 <td>{{$cuisine->event}}</td>
                             </tr>
-                            <tr>
+                           <tr>
                                 <th>Tài liệu liên quan</th>
                                 <td>
                                     @if(isset($document))
                                         @foreach($document as $item)
-                                            <a href="{{asset('storage/'.$item)}}" download><i class="fa fa-download"></i> Tải xuống</a>
+                                            <a href="{{asset('storage/'.$item)}}" download="download"><i class="fa fa-download"></i> Tải xuống</a>
                                             <br>
                                         @endforeach
                                     @endif

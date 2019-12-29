@@ -24,15 +24,9 @@
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
-<<<<<<< HEAD
-                                    @if(!empty($relics->image))
-                                    <img src="{{asset('storage/'. $relics->image)}}" style="width: 400px; height: 300px">
-                                    @endif
-=======
                                     <a href="{{asset('storage/'.$relics->image)}}" class="fancy">
                                         <img src="{{asset('storage/'.$relics->image)}}" style="width: 400px; height: 300px">
                                     </a>
->>>>>>> a332a171f1bf39179f01f6afc63eb0ec64c2d18e
                                 </td>
                             </tr>
                             <tr>
@@ -94,15 +88,16 @@
                                 <td>
                                     @if(isset($document))
                                         @foreach($document as $item)
-                                            <a href="{{asset('storage/'.$item)}}" download="download"><i class="fa fa-download"></i> Tải xuống</a>
+                                            <a href="{{asset('storage/'.$item)}}"><i class="fa fa-download"></i> Tải xuống</a>
                                             <br>
                                         @endforeach
                                     @endif
                                 </td>
                             </tr>
                         </table>
-                        <div class="col-md-2">
+                        <div class="col-md-5">
                             <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
+                            <a href="{{route('admin.relics.form.edit', $relics->id)}}" class="btn btn-primary">Sửa</a>
                         </div>
                     </div>
                 </div>

@@ -80,6 +80,15 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         return Response::json($data);
     });
 
+    Route::get('/get-tourist-acommodation-for-chart', function () {
+        $data = [];
+        $acommodations = \App\Models\TouristAcommodation::count();
+        for ($i = 1; $i <= count(config('base.tourist_accommodation_type')); $i++) {
+            $data[$i] = (\App\Models\TouristAcommodation::where('type', '=' ,$i)->count() / $acommodations) * 100;
+        }
+        return Response::json($data);
+    });
+
     Route::get('/get-relics-for-chart', function () {
         $objData = [];
         $objData['relics'] = [];
@@ -93,9 +102,28 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         return Response::json($objData);
     });
 
+    Route::get('/get-tourists-for-chart', function () {
+        $objData = [];
+        $objData[1] = [];
+        $objData[2] = [];
+        $objData['year'] = [];
+        $now = \Carbon\Carbon::now();
+        for($i = ($now->year - 10); $i <= $now->year; $i++ ){
+            array_push($objData[1], \App\Models\TouristAndTouristAcommodation::where('year', '=', $i)->whereHas('tourists', function ($query) {
+                $query->where('type', '=', 1);
+            })->count());
+            array_push($objData[2], \App\Models\TouristAndTouristAcommodation::where('year', '=', $i)->whereHas('tourists', function ($query) {
+                $query->where('type', '=', 2);
+            })->count());
+
+            array_push($objData['year'], $i);
+        }
+        return Response::json($objData);
+    });
+
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'UserController@index')->name('admin.user.list');
-        Route::get('/detail', 'UserController@detail')->name('admin.user.detail');
+        Route::get('/detail/{id}', 'UserController@detail')->name('admin.user.detail');
         Route::get('/form', 'UserController@getForm')->name('admin.user.form.get');
         Route::post('/form', 'UserController@saveForm')->name('admin.user.form.post');
         Route::get('/edit/{id}', 'UserController@editForm')->name('admin.user.form.edit');
@@ -173,5 +201,28 @@ Route::group(['middleware' => ['check-login'], 'prefix' => '/'], function () {
         Route::get('/detail/{id}', 'RelicsController@detail')->name('admin.relics.detail');
         Route::get('/delete/{id}', 'RelicsController@delete')->name('admin.relics.delete');
         Route::get('/export', 'RelicsController@exportData')->name('admin.relics.export');
+    });
+
+    Route::group(['prefix' => 'tourist-acommodation'], function () {
+        Route::get('/', 'TouristAcommodationController@index')->name('admin.tourist_acommodation.list');
+        Route::get('/filter', 'TouristAcommodationController@filter')->name('admin.tourist_acommodation.filter');
+        Route::get('/form', 'TouristAcommodationController@getForm')->name('admin.tourist_acommodation.form.get');
+        Route::post('/form', 'TouristAcommodationController@saveForm')->name('admin.tourist_acommodation.form.post');
+        Route::get('/edit/{id}', 'TouristAcommodationController@editForm')->name('admin.tourist_acommodation.form.edit');
+        Route::post('/update/{id}', 'TouristAcommodationController@updateForm')->name('admin.tourist_acommodation.form.update');
+        Route::get('/detail/{id}', 'TouristAcommodationController@detail')->name('admin.tourist_acommodation.detail');
+        Route::get('/delete/{id}', 'TouristAcommodationController@delete')->name('admin.tourist_acommodation.delete');
+        Route::get('/export', 'TouristAcommodationController@exportData')->name('admin.tourist_acommodation.export');
+
+        Route::group(['prefix' => '{touristAcommodation}/tourist'], function () {
+            Route::get('/', 'TouristController@index')->name('admin.tourist.list');
+            Route::get('/form', 'TouristController@getForm')->name('admin.tourist.form.get');
+            Route::post('/form', 'TouristController@saveForm')->name('admin.tourist.form.post');
+            Route::get('/edit/{id}', 'TouristController@editForm')->name('admin.tourist.form.edit');
+            Route::post('/update/{id}', 'TouristController@updateForm')->name('admin.tourist.form.update');
+            Route::get('/detail/{id}', 'TouristController@detail')->name('admin.tourist.detail');
+            Route::get('/delete/{id}', 'TouristController@delete')->name('admin.tourist.delete');
+            Route::get('/export', 'TouristController@exportData')->name('admin.tourist.export');
+        });
     });
 });

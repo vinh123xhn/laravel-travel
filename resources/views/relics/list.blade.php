@@ -53,7 +53,7 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Mã</th>
-                                <th>Tên nghệ thuật</th>
+                                <th>Tên di tích</th>
                                 <th>Phân loại</th>
                                 <th>Thao tác</th>
                             </tr>
