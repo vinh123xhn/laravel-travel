@@ -14,30 +14,6 @@
                     <div class="card-body">
                         <div class="col-sm-12 col-md-12" style="padding-left: 0">
                             <div class="col-md-4" style="padding-left: 0">
-                                {{--<form action="{{route('admin.tourist.filter')}}" method="get">--}}
-                                    {{--<label>--}}
-                                        {{--<select class="form-control form-control-sm" name="category" aria-controls="bootstrap-data-table-export">--}}
-                                            {{--@if(isset($category))--}}
-                                                {{--@foreach(config('base.tourist_type') as $k => $item)--}}
-                                                    {{--<option--}}
-                                                        {{--@if($category == $k)--}}
-                                                        {{--{{"selected"}}--}}
-                                                        {{--@endif--}}
-                                                        {{--value="{{$k}}">{{$item}}--}}
-                                                    {{--</option>--}}
-                                                {{--@endforeach--}}
-                                            {{--@else--}}
-                                                {{--<option value="">Lựa chọn</option>--}}
-                                                {{--@foreach(config('base.tourist_type') as $k => $item)--}}
-                                                    {{--<option value="{{$k}}">{{$item}}</option>--}}
-                                                {{--@endforeach--}}
-                                            {{--@endif--}}
-                                        {{--</select>--}}
-                                    {{--</label>--}}
-                                    {{--<label>--}}
-                                        {{--<button class="btn btn-primary for-list" type="submit">Lọc</button>--}}
-                                    {{--</label>--}}
-                                {{--</form>--}}
                             </div>
                             <div class="float-right">
                                 <label>

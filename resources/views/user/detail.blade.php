@@ -1,7 +1,7 @@
 @extends('layout.master')
-@section('where', 'Di tích')
-@section('title', 'Di tích')
-@section('where_active', 'Di tích')
+@section('where', 'Người dùng')
+@section('title', 'Người dùng')
+@section('where_active', 'Người dùng')
 @section('content')
     <div class="animated fadeIn">
         <div class="row">
@@ -9,77 +9,47 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Chi tiết di tích</strong>
+                        <strong class="card-title">Chi tiết Người dùng</strong>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-th">
                             <tr>
-                                <th>Loại hình</th>
-                                <td>{{config('base.art_category')[$user->category]}}</td>
-                            </tr>
-                            <tr>
-                                <th>Tên nghệ thuật</th>
+                                <th>Họ và tên</th>
                                 <td>{{$user->name}}</td>
                             </tr>
                             <tr>
-                                <th>Thuyết minh</th>
-                                <td>
-                                    <?php
-                                    $str = $user->subtitle;
-                                    echo html_entity_decode($str);
-                                    ?>
-                                </td>
+                                <th>Giới tính</th>
+                                <td>{{$user->gender ? config('base.gender')[$user->gender] : ''}}</td>
                             </tr>
                             <tr>
-                                <th>Loại hình chi tiết cấp 1</th>
-                                <td>{{$user->level_1 ? config('base.art_level_1')[$user->level_1] : ''}}</td>
+                                <th>Thư điện tử</th>
+                                <td>{{$user->email}}</td>
                             </tr>
                             <tr>
-                                <th>Loại hình chi tiết cấp 2</th>
-                                <td>{{$user->level_2	? config('base.art_level_2')[$user->level_2] : ''}}</td>
+                                <th>Số điện thoại</th>
+                                <td>{{$user->phone}}</td>
                             </tr>
                             <tr>
                                 <th>Ảnh đại diện</th>
                                 <td>
-                                    <img src="{{asset('storage/'.$user->image)}}" style="width: 400px; height: 300px">
+                                    <a href="{{asset('storage/'.$user->image)}}" class="fancy">
+                                        <img src="{{asset('storage/'.$user->image)}}" style="width: 200px; height: 100px">
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Tình trạng hiện nay</th>
-                                <td>{{$user->status ? config('base.art_status')[$user->status] : ''}}</td>
+                                <th>Nhóm</th>
+                                <td>{{config('base.group_user')[$user->group]}}</td>
                             </tr>
                             <tr>
-                                <th>Nội dung và các di bản</th>
-                                <td>{{$user->content}}</td>
-                            </tr>
-                            <tr>
-                                <th>Đơn vị quản lý</th>
-                                <td>{{$user->management_unit}}</td>
-                            </tr>
-                            <tr>
-                                <th>Danh nhân liên quan</th>
-                                <td>{{$user->celebrity}}</td>
-                            </tr>
-                            <tr>
-                                <th>Địa điểm liên quan</th>
-                                <td>{{$user->location}}</td>
-                            </tr>
-                            <tr>
-                                <th>Sự kiện liên quan</th>
-                                <td>{{$user->event}}</td>
-                            </tr>
-                            <tr>
-                                <th>Tài liệu liên quan</th>
-                                <td>
-                                    @if(isset($document))
-                                        @foreach($document as $item)
-                                            <a href="{{asset('storage/'.$item)}}"><i class="fa fa-download"></i> Tải xuống</a>
-                                            <br>
-                                        @endforeach
-                                    @endif
-                                </td>
+                                <th>Trạng thái hoạt động</th>
+                                <td>{{config('base.active')[$user->active]}}</td>
                             </tr>
                         </table>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary border-radius-5">Quay lại</a>
+                        <a href="{{route('admin.user.form.edit', $user->id)}}" class="btn btn-primary border-radius-5">Sửa</a>
                     </div>
                 </div>
             </div>

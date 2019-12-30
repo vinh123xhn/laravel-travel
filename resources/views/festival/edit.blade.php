@@ -285,7 +285,7 @@
                                             </button>
                                         </div>
                                         <div class="col-md-2" style="padding-left:0">
-                                            <a href="{{route('admin.festival.list')}}" class="btn btn-primary">Quay lại</a>
+                                            <a href="{{route('admin.festival.list')}}" class="btn btn-primary  border-radius-5">Quay lại</a>
                                         </div>
                                     </div>
                                 </form>

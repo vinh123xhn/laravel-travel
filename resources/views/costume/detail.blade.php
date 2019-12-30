@@ -92,8 +92,8 @@
                             </tr>
                         </table>
                         <div class="col-md-5">
-                            <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary">Quay lại</a>
-                            <a href="{{route('admin.costume.form.edit', $costume->id)}}" class="btn btn-primary">Sửa</a>
+                            <a href="{{redirect()->getUrlGenerator()->previous()}}" class="btn btn-primary  border-radius-5">Quay lại</a>
+                            <a href="{{route('admin.costume.form.edit', $costume->id)}}" class="btn btn-info  border-radius-5">Sửa</a>
                         </div>
                     </div>
                 </div>

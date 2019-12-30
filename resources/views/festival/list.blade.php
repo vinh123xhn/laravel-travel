@@ -35,7 +35,7 @@
                                         </select>
                                     </label>
                                     <label>
-                                        <button class="btn btn-primary for-list" type="submit">Lọc</button>
+                                        <button class="btn btn-primary for-list  border-radius-5" type="submit">Lọc</button>
                                     </label>
                                 </form>
                             </div>

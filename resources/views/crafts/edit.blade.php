@@ -241,12 +241,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-1" style="padding-right:0">
-                                            <button id="payment-button" type="submit" class="btn btn-info">
+                                            <button id="payment-button" type="submit" class="btn btn-info  border-radius-5">
                                                 Lưu
                                             </button>
                                         </div>
                                         <div class="col-md-2" style="padding-left:0">
-                                            <a href="{{route('admin.crafts.list')}}" class="btn btn-primary">Quay lại</a>
+                                            <a href="{{route('admin.crafts.list')}}" class="btn btn-primary  border-radius-5">Quay lại</a>
                                         </div>
                                     </div>
                                 </form>

@@ -111,10 +111,10 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <a class="btn btn-primary float-left" href="{{route('admin.user.list')}}" style="margin-right: 5px">
+                    <a class="btn btn-primary float-left  border-radius-5" href="{{route('admin.user.list')}}" style="margin-right: 5px">
                         Quay lại
                     </a>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <button type="submit" class="btn btn-primary  border-radius-5">Lưu</button>
                 </div>
             </form>
         </div>

@@ -137,10 +137,10 @@
 
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <button id="payment-button" type="submit" class="btn btn-info" style="width: 100px; margin-right: 10px">
+                                            <button id="payment-button" type="submit" class="btn btn-info  border-radius-5" style="width: 100px; margin-right: 10px">
                                                 Lưu
                                             </button>
-                                            <a href="{{route('admin.tourist_acommodation.list')}}" class="btn btn-primary">Quay lại</a>
+                                            <a href="{{route('admin.tourist_acommodation.list')}}" class="btn btn-primary  border-radius-5">Quay lại</a>
                                         </div>
                                     </div>
                                 </form>

@@ -35,16 +35,16 @@
                                         </select>
                                     </label>
                                     <label>
-                                        <button class="btn btn-primary for-list" type="submit">Lọc</button>
+                                        <button class="btn btn-primary for-list  border-radius-5" type="submit">Lọc</button>
                                     </label>
                                 </form>
                             </div>
                             <div class="float-right">
                                 <label>
-                                    <a class="btn btn-primary for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.costume.form.get')}}"> Thêm mới trang phục</a>
+                                    <a class="btn btn-primary for-list  border-radius-5" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.costume.form.get')}}"> Thêm mới trang phục</a>
                                 </label>
                                 <label>
-                                    <a class="btn btn-warning for-list" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.costume.export')}}"> Xuất dữ liệu</a>
+                                    <a class="btn btn-warning for-list  border-radius-5" style="margin-bottom:1px; margin-left: 10px" href="{{route('admin.costume.export')}}"> Xuất dữ liệu</a>
                                 </label>
                             </div>
                         </div>
